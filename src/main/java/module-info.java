@@ -8,6 +8,12 @@ module lk.ijse.elitedrivingschool.elite_driving_school_system {
 
 
     opens lk.ijse.elite_driving_school_system to javafx.fxml;
-    opens lk.ijse.elite_driving_school_system.entity to org.hibernate.orm.core;
+
+
+    opens lk.ijse.elite_driving_school_system.controller to javafx.fxml;
+
+
+    opens lk.ijse.elite_driving_school_system.entity to org.hibernate.orm.core, jakarta.persistence;
+
     exports lk.ijse.elite_driving_school_system;
 }

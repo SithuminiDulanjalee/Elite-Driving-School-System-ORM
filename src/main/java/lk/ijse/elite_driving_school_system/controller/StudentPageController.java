@@ -1,13 +1,68 @@
 package lk.ijse.elite_driving_school_system.controller;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class StudentPageController implements Initializable {
+    public TextField txtStudentId;
+    public TextField txtName;
+    public TextField txtPhone;
+    public TextField txtEmail;
+    public TextField txtAddress;
+    public Button btnSave;
+    public Button btnUpdate;
+    public Button btnDelete;
+    public Button btnReset;
+    public TableView tblStudent;
+    public TableColumn colId;
+    public TableColumn colName;
+    public TableColumn colPhone;
+    public TableColumn colEmail;
+    public TableColumn colAddress;
+    public TableColumn colRegistrationDate;
+    public TableColumn colCourse;
+    public DatePicker registrationDatePicker;
+    public ComboBox cmbCourse;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    }
+
+    public void btnSearchOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnResetOnAction(ActionEvent actionEvent) {
+    }
+
+    public void tblStudentOnClickAction(MouseEvent mouseEvent) {
+    }
+
+    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnSaveOnAction(ActionEvent actionEvent) {
+    }
+
+    public void txtAddressKeyReleased(KeyEvent keyEvent) {
+    }
+
+    public void txtEmailKeyReleased(KeyEvent keyEvent) {
+    }
+
+    public void txtPhoneKeyReleased(KeyEvent keyEvent) {
+    }
+
+    public void txtSearchKeyReleased(KeyEvent keyEvent) {
     }
 }

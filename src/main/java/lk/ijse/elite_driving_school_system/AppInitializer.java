@@ -19,7 +19,7 @@ public class AppInitializer extends Application {
         Parent load = FXMLLoader.load(getClass().getResource("/view/Login.fxml"));
         Scene scene = new Scene(load);
         stage.setScene(scene);
-        stage.setResizable(false);
+//        stage.setResizable(false);
         stage.setTitle("Elite Driving School");
         stage.show();
     }

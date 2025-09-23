@@ -17,11 +17,11 @@ public class FactoryConfiguration {
 
         // 2. Add all entity classes
         configuration.addAnnotatedClass(User.class);
-//        configuration.addAnnotatedClass(Student.class);
-//        configuration.addAnnotatedClass(Instructor.class);
-//        configuration.addAnnotatedClass(Course.class);
-//        configuration.addAnnotatedClass(Lesson.class);
-//        configuration.addAnnotatedClass(Payment.class);
+        configuration.addAnnotatedClass(Student.class);
+        configuration.addAnnotatedClass(Instructor.class);
+        configuration.addAnnotatedClass(Course.class);
+        configuration.addAnnotatedClass(Lesson.class);
+        configuration.addAnnotatedClass(Payment.class);
 
         // 3. Build SessionFactory using hibernate.properties
         StandardServiceRegistryBuilder builder =

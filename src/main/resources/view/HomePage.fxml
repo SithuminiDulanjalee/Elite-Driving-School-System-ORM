@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.elite_driving_school_system.controller.HomePageController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="588.0" prefWidth="500.0" style="-fx-background-color: #bdd7ff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.elite_driving_school_system.controller.HomePageController">
+    <children>
+        <HBox layoutX="38.0" layoutY="75.0" spacing="10.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="75.0">
+            <children>
+                <AnchorPane prefHeight="149.0" prefWidth="222.0" style="-fx-background-color: #abbfe5; -fx-background-radius: 20px;">
+                    <children>
+                        <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" text="Students">
+                            <font>
+                                <Font name="SansSerif Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="139.0" layoutY="34.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/icons/Student.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lblCustomer" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="51">
+                            <font>
+                                <Font name="System Bold" size="25.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Region HBox.hgrow="ALWAYS" />
+                <AnchorPane prefHeight="149.0" prefWidth="222.0" style="-fx-background-color: #abbfe5; -fx-background-radius: 20px;">
+                    <children>
+                        <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" text="Courses">
+                            <font>
+                                <Font name="SansSerif Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="139.0" layoutY="34.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/icons/Course.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lblOrders" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="15">
+                            <font>
+                                <Font name="System Bold" size="25.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </Label>
+                    </children>
+                </AnchorPane>
+                <Region HBox.hgrow="ALWAYS" />
+                <AnchorPane prefHeight="149.0" prefWidth="222.0" style="-fx-background-color: #abbfe5; -fx-background-radius: 20px;">
+                    <children>
+                        <Label layoutX="16.0" layoutY="23.0" opacity="0.7" styleClass="card-heading-font" text="Instructors">
+                            <font>
+                                <Font name="SansSerif Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="139.0" layoutY="34.0" opacity="0.9" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/icons/Instructor.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lblSuppliers" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="12">
+                            <font>
+                                <Font name="System Bold" size="25.0" />
+                            </font>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+        <Label layoutX="38.0" layoutY="23.0" prefHeight="38.0" prefWidth="83.0" text="Home" textFill="#1f2e90" AnchorPane.leftAnchor="38.0" AnchorPane.topAnchor="23.0">
+            <font>
+                <Font name="Cambria Bold" size="30.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="36.0" fitWidth="29.0" layoutX="128.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../images/icons/Home.png" />
+            </image>
+        </ImageView>
+        <BarChart fx:id="barChart" layoutX="38.0" layoutY="238.0" prefHeight="329.0" prefWidth="458.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="259.0">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+        </BarChart>
+    </children>
 </AnchorPane>
