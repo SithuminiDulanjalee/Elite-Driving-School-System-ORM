@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.elite_driving_school_system.controller.SignUpController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="ancMainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.elite_driving_school_system.controller.SignUpController">
+    <children>
+        <StackPane fx:id="dialogPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane fx:id="ancLogin" prefHeight="626.0" prefWidth="889.0">
+                    <children>
+                        <ImageView fitHeight="636.0" fitWidth="889.0" layoutY="7.0" opacity="0.55" pickOnBounds="true" AnchorPane.bottomAnchor="-10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <image>
+                                <Image url="@../images/Login.jpg" />
+                            </image>
+                            <effect>
+                                <InnerShadow height="255.0" offsetX="10.0" offsetY="10.0" radius="127.0" width="255.0" />
+                            </effect>
+                        </ImageView>
+                        <VBox layoutX="300.0" layoutY="337.0" prefHeight="166.0" prefWidth="290.0" spacing="20.0">
+                            <children>
+                                <VBox prefHeight="36.0" prefWidth="290.0" spacing="5.0">
+                                    <children>
+                                        <Label text="Username" textFill="#480f2e">
+                                            <font>
+                                                <Font name="SansSerif Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <TextField fx:id="txtUsername" prefHeight="27.0" prefWidth="252.0" promptText="Username" style="-fx-border-color: #da5aab; -fx-border-radius: 10; -fx-background-radius: 10;" text="admin" />
+                                    </children>
+                                </VBox>
+                                <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                    <children>
+                                        <Label text="Password" textFill="#480f2e">
+                                            <font>
+                                                <Font name="SansSerif Bold" size="14.0" />
+                                            </font>
+                                        </Label>
+                                        <PasswordField fx:id="txtPassword" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #da5aab; -fx-background-radius: 10; -fx-border-radius: 10;" text="1234" />
+                                    </children>
+                                </VBox>
+                                <Label fx:id="lblInvalid" contentDisplay="CENTER" prefHeight="14.0" prefWidth="378.0" text="Error" textFill="RED" visible="false">
+                                    <font>
+                                        <Font name="SansSerif Regular" size="11.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+                        <JFXButton layoutX="381.0" layoutY="513.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #772450;" text="Sign Up" textFill="WHITE">
+                            <font>
+                                <Font name="SansSerif Bold" size="16.0" />
+                            </font>
+                        </JFXButton>
+                        <Label layoutX="276.0" layoutY="235.0" prefHeight="41.0" prefWidth="337.0" text="Elite Driving School" textFill="#480f2e">
+                            <font>
+                                <Font name="SansSerif Bold" size="35.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="173.0" fitWidth="241.0" layoutX="324.0" layoutY="52.0" pickOnBounds="true">
+                            <image>
+                                <Image url="@../images/Logo.png" />
+                            </image>
+                        </ImageView>
+                  <Label layoutX="392.0" layoutY="276.0" prefHeight="41.0" prefWidth="180.0" text="SignUp" textFill="#480f2e">
+                     <font>
+                        <Font name="SansSerif Regular" size="30.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </StackPane>
+    </children>
 </AnchorPane>

@@ -13,15 +13,12 @@ import java.util.ArrayList;
 @ToString
 public class StudentDTO {
     private String studentId;
-    private String firstName;
-    private String lastName;
+    private String studentName;
     private String phone;
     private String email;
     private String address;
-    private String gender;
-    private Date dob;
     private Date registerDate;
-    private ArrayList<StudentCourseDetailDTO> studentCourseDetails;
+    private ArrayList<CourseDTO> courses;
     private ArrayList<LessonDTO> lessons;
     private ArrayList<PaymentDTO> payments;
 

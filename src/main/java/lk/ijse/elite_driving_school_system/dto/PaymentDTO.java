@@ -12,8 +12,8 @@ import java.sql.Date;
 public class PaymentDTO {
     private String paymentId;
     private String studentId;
+    private String courseId;
     private Date paymentDate;
     private double amount;
-    private String paymentMethod;
     private String status;
 }

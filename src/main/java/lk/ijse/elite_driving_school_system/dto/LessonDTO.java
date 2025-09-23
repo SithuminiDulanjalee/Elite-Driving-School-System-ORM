@@ -17,6 +17,5 @@ public class LessonDTO {
     private String courseId;
     private Date date;
     private String lessonName;
-    private Time time;
-    private String status;
+    private String time;
 }

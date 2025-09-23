@@ -1,11 +1,13 @@
 module lk.ijse.elitedrivingschool.elite_driving_school_system {
     requires javafx.controls;
     requires javafx.fxml;
-    requires java.sql;
     requires static lombok;
     requires org.hibernate.orm.core;
+    requires jakarta.persistence;
+    requires java.naming;
 
 
     opens lk.ijse.elite_driving_school_system to javafx.fxml;
+    opens lk.ijse.elite_driving_school_system.entity to org.hibernate.orm.core;
     exports lk.ijse.elite_driving_school_system;
 }

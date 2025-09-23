@@ -1,18 +1,13 @@
 package lk.ijse.elite_driving_school_system.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SignUpController implements Initializable {
+public class HomePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-    }
-
-    public void btnLoginOnAction(ActionEvent actionEvent) {
-        
     }
 }

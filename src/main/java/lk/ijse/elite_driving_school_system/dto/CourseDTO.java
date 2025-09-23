@@ -13,8 +13,8 @@ public class CourseDTO {
     private String courseId;
     private String instructorId;
     private String courseName;
+    private String description;
     private String duration;
     private double fee;
     private ArrayList<LessonDTO> lessons;
-    private ArrayList<StudentCourseDetailDTO> studentCourseDetails;
 }
