@@ -1,4 +1,6 @@
 package lk.ijse.elite_driving_school_system.dao.custom;
 
-public interface UserDAO {
+import lk.ijse.elite_driving_school_system.dao.SuperDAO;
+
+public interface UserDAO extends SuperDAO {
 }

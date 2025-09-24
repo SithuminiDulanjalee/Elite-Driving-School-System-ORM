@@ -1,4 +1,6 @@
 package lk.ijse.elite_driving_school_system.dao.custom.impl;
 
-public class InstructorDAOImpl {
+import lk.ijse.elite_driving_school_system.dao.custom.InstructorDAO;
+
+public class InstructorDAOImpl implements InstructorDAO {
 }

@@ -1,4 +1,6 @@
 package lk.ijse.elite_driving_school_system.dao.custom;
 
-public interface PaymentDAO {
+import lk.ijse.elite_driving_school_system.dao.SuperDAO;
+
+public interface PaymentDAO extends SuperDAO {
 }
