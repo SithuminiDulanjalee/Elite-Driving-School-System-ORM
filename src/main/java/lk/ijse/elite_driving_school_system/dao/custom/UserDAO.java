@@ -1,6 +1,8 @@
 package lk.ijse.elite_driving_school_system.dao.custom;
 
+import lk.ijse.elite_driving_school_system.dao.CrudDAO;
 import lk.ijse.elite_driving_school_system.dao.SuperDAO;
+import lk.ijse.elite_driving_school_system.entity.User;
 
-public interface UserDAO extends SuperDAO {
+public interface UserDAO extends CrudDAO<User> {
 }

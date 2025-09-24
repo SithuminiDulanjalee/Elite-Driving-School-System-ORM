@@ -1,6 +1,8 @@
 package lk.ijse.elite_driving_school_system.dao.custom;
 
+import lk.ijse.elite_driving_school_system.dao.CrudDAO;
 import lk.ijse.elite_driving_school_system.dao.SuperDAO;
+import lk.ijse.elite_driving_school_system.entity.Instructor;
 
-public interface InstructorDAO extends SuperDAO {
+public interface InstructorDAO extends CrudDAO<Instructor> {
 }
