@@ -3,6 +3,7 @@ package lk.ijse.elite_driving_school_system.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -64,5 +65,11 @@ public class LoginController implements Initializable {
     }
 
     public void goToSignUpOnAction(MouseEvent mouseEvent) {
+        try {
+            ancMainContainer.getChildren().clear();
+            ancMainContainer.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/SignUp.fxml")));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

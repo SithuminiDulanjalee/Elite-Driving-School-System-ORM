@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.InnerShadow?>
 <?import javafx.scene.image.Image?>
@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="ancMainContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.elite_driving_school_system.controller.SignUpController">
     <children>
@@ -55,19 +56,19 @@
                               <PasswordField fx:id="txtConfirmPassword" layoutX="10.0" layoutY="31.0" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #1f2e90; -fx-background-radius: 10; -fx-border-radius: 10;" text="1234" />
                                     </children>
                                 </VBox>
-                        <CheckBox fx:id="adminCheckBox" layoutX="10.0" layoutY="180.0" mnemonicParsing="false" onAction="#adminCheckBoxOnAction" text="Admin">
+                        <RadioButton fx:id="adminRadioBtn" mnemonicParsing="false" onAction="#adminRadioBtnOnAction" text="Admin">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
-                        </CheckBox>
-                        <CheckBox fx:id="receptioninstCheckBox" mnemonicParsing="false" onAction="#receptioninstCheckBoxOnAction" text="Receptioninst">
+                        </RadioButton>
+                        <RadioButton fx:id="receptionistRadioBtn" layoutX="10.0" layoutY="199.0" mnemonicParsing="false" onAction="#receptionistRadioBtnOnAction" text="Receptionist">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
-                        </CheckBox>
+                        </RadioButton>
                             </children>
                         </VBox>
-                        <JFXButton layoutX="395.0" layoutY="549.0" mnemonicParsing="false" onAction="#btnSignUpOnAction" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #1f2e90;" text="Sign Up" textFill="WHITE">
+                        <JFXButton layoutX="395.0" layoutY="522.0" mnemonicParsing="false" onAction="#btnSignUpOnAction" prefHeight="34.0" prefWidth="126.0" style="-fx-background-color: #1f2e90;" text="Sign Up" textFill="WHITE">
                             <font>
                                 <Font name="SansSerif Bold" size="16.0" />
                             </font>
@@ -87,6 +88,16 @@
                         <Font name="SansSerif Bold" size="30.0" />
                      </font>
                   </Label>
+                  <Text layoutX="313.0" layoutY="587.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already have an account?">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#1f2e90" layoutX="485.0" layoutY="588.0" onMouseClicked="#goToSignInOnAction" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In" underline="true">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
                     </children>
                 </AnchorPane>
             </children>

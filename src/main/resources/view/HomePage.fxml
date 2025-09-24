@@ -28,7 +28,7 @@
                                 <Image url="@../images/icons/Student.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="lblCustomer" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="51">
+                        <Label fx:id="lblStudents" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="51">
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font>
@@ -51,7 +51,7 @@
                                 <Image url="@../images/icons/Course.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="lblOrders" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="15">
+                        <Label fx:id="lblCourses" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="15">
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font>
@@ -74,7 +74,7 @@
                                 <Image url="@../images/icons/Instructor.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="lblSuppliers" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="12">
+                        <Label fx:id="lblInstructors" layoutX="24.0" layoutY="107.0" opacity="0.9" styleClass="card-price-font" text="12">
                             <font>
                                 <Font name="System Bold" size="25.0" />
                             </font>
