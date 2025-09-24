@@ -39,34 +39,64 @@ public class InstructorDAOImpl implements InstructorDAO {
 
     @Override
     public boolean save(Instructor instructor) throws SQLException {
+        Transaction transaction = null;
         try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            transaction = session.beginTransaction();
             session.persist(instructor);
+            transaction.commit();
             return true;
         } catch (Exception e) {
-            throw new SQLException("Failed to save instructor", e);
+            if (transaction != null && transaction.getStatus().canRollback()) {
+                try {
+                    transaction.rollback();
+                } catch (Exception rollbackEx) {
+                    rollbackEx.printStackTrace();
+                }
+            }
+            throw new SQLException("Failed to save course", e);
         }
     }
 
     @Override
     public boolean update(Instructor instructor) throws SQLException {
+        Transaction transaction = null;
         try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            transaction = session.beginTransaction();
             session.merge(instructor);
+            transaction.commit();
             return true;
         } catch (Exception e) {
+            if (transaction != null && transaction.getStatus().canRollback()) {
+                try {
+                    transaction.rollback();
+                } catch (Exception rollbackEx) {
+                    rollbackEx.printStackTrace();
+                }
+            }
             throw new SQLException("Failed to update instructor", e);
         }
     }
 
     @Override
     public boolean delete(String id) throws SQLException {
+        Transaction transaction = null;
         try (Session session = FactoryConfiguration.getInstance().getSession()) {
+            transaction = session.beginTransaction();
             Instructor instructor = session.get(Instructor.class, id);
             if (instructor != null) {
                 session.remove(instructor);
+                transaction.commit();
                 return true;
             }
             return false;
         } catch (Exception e) {
+            if (transaction != null && transaction.getStatus().canRollback()) {
+                try {
+                    transaction.rollback();
+                } catch (Exception rollbackEx) {
+                    rollbackEx.printStackTrace();
+                }
+            }
             throw new SQLException("Failed to delete instructor", e);
         }
     }

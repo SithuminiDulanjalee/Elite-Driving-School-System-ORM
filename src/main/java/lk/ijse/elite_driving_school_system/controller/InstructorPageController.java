@@ -189,7 +189,6 @@ public class InstructorPageController implements Initializable {
                     txtEmail.getText(),
                     txtSpecialization.getText()
             );
-
             if (instructorBO.updateInstructors(dto)){
                 new Alert(Alert.AlertType.INFORMATION, "Instructor updated successfully").show();
                 resetPage();
@@ -202,6 +201,8 @@ public class InstructorPageController implements Initializable {
             new Alert(Alert.AlertType.ERROR, "Fail").show();
             e.printStackTrace();
         }
+
+
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
