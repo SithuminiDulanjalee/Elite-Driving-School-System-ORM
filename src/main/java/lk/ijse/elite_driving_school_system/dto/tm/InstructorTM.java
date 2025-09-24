@@ -1,16 +1,13 @@
-package lk.ijse.elite_driving_school_system.dto;
+package lk.ijse.elite_driving_school_system.dto.tm;
 
 import lombok.*;
-
-import java.sql.Date;
-import java.util.ArrayList;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class InstructorDTO {
+public class InstructorTM {
     private String instructorId;
     private String instructorName;
     private String phone;

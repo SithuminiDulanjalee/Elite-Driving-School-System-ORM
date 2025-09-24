@@ -5,30 +5,37 @@ import lk.ijse.elite_driving_school_system.entity.Student;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class StudentDAOImpl implements StudentDAO {
+
     @Override
-    public String getNextId() throws SQLException, ClassNotFoundException {
+    public List<Student> getAll() throws SQLException {
+        return List.of();
+    }
+
+    @Override
+    public String getLastId() throws SQLException {
         return "";
     }
 
     @Override
-    public boolean save(Student courseDTO) throws SQLException, ClassNotFoundException {
+    public boolean save(Student student) throws SQLException {
         return false;
     }
 
     @Override
-    public ArrayList<Student> getAll() throws SQLException, ClassNotFoundException {
-        return null;
-    }
-
-    @Override
-    public boolean update(Student courseDTO) throws SQLException, ClassNotFoundException {
+    public boolean update(Student student) throws SQLException {
         return false;
     }
 
     @Override
-    public boolean delete(String courseID) throws SQLException, ClassNotFoundException {
+    public boolean delete(String id) throws SQLException {
         return false;
+    }
+
+    @Override
+    public List<String> getAllIds() throws SQLException {
+        return List.of();
     }
 }

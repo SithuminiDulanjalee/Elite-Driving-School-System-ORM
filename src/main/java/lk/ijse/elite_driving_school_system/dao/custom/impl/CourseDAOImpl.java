@@ -1,34 +1,45 @@
 package lk.ijse.elite_driving_school_system.dao.custom.impl;
 
+import lk.ijse.elite_driving_school_system.config.FactoryConfiguration;
 import lk.ijse.elite_driving_school_system.dao.custom.CourseDAO;
 import lk.ijse.elite_driving_school_system.entity.Course;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class CourseDAOImpl implements CourseDAO {
+
     @Override
-    public String getNextId() throws SQLException, ClassNotFoundException {
+    public List<Course> getAll() throws SQLException {
+        return List.of();
+    }
+
+    @Override
+    public String getLastId() throws SQLException {
         return "";
     }
 
     @Override
-    public boolean save(Course courseDTO) throws SQLException, ClassNotFoundException {
+    public boolean save(Course course) throws SQLException {
         return false;
     }
 
     @Override
-    public ArrayList<Course> getAll() throws SQLException, ClassNotFoundException {
-        return null;
-    }
-
-    @Override
-    public boolean update(Course courseDTO) throws SQLException, ClassNotFoundException {
+    public boolean update(Course course) throws SQLException {
         return false;
     }
 
     @Override
-    public boolean delete(String courseID) throws SQLException, ClassNotFoundException {
+    public boolean delete(String id) throws SQLException {
         return false;
+    }
+
+    @Override
+    public List<String> getAllIds() throws SQLException {
+        return List.of();
     }
 }

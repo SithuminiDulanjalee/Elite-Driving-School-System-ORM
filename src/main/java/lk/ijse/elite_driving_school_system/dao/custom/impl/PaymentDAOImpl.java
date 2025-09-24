@@ -5,30 +5,37 @@ import lk.ijse.elite_driving_school_system.entity.Payment;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class PaymentDAOImpl implements PaymentDAO {
+
     @Override
-    public String getNextId() throws SQLException, ClassNotFoundException {
+    public List<Payment> getAll() throws SQLException {
+        return List.of();
+    }
+
+    @Override
+    public String getLastId() throws SQLException {
         return "";
     }
 
     @Override
-    public boolean save(Payment courseDTO) throws SQLException, ClassNotFoundException {
+    public boolean save(Payment payment) throws SQLException {
         return false;
     }
 
     @Override
-    public ArrayList<Payment> getAll() throws SQLException, ClassNotFoundException {
-        return null;
-    }
-
-    @Override
-    public boolean update(Payment courseDTO) throws SQLException, ClassNotFoundException {
+    public boolean update(Payment payment) throws SQLException {
         return false;
     }
 
     @Override
-    public boolean delete(String courseID) throws SQLException, ClassNotFoundException {
+    public boolean delete(String id) throws SQLException {
         return false;
+    }
+
+    @Override
+    public List<String> getAllIds() throws SQLException {
+        return List.of();
     }
 }

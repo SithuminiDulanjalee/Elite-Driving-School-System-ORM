@@ -1,16 +1,13 @@
 package lk.ijse.elite_driving_school_system.dao;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
+import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO {
-    public String getNextId() throws SQLException, ClassNotFoundException ;
-
-    public boolean save(T courseDTO) throws SQLException, ClassNotFoundException;
-
-    public ArrayList<T> getAll() throws SQLException, ClassNotFoundException;
-
-    public boolean update(T courseDTO) throws SQLException, ClassNotFoundException ;
-
-    public boolean delete(String courseID) throws SQLException, ClassNotFoundException ;
+    List<T> getAll() throws SQLException;
+    String getLastId() throws SQLException;
+    boolean save(T t) throws SQLException;
+    boolean update(T t) throws SQLException;
+    boolean delete(String id) throws SQLException;
+    List<String> getAllIds() throws SQLException;
 }

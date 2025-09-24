@@ -1,19 +1,16 @@
-package lk.ijse.elite_driving_school_system.dto;
+package lk.ijse.elite_driving_school_system.dto.tm;
 
 import lombok.*;
-
-import java.util.ArrayList;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
-public class CourseDTO {
+public class CourseTM {
     private String courseId;
     private String courseName;
     private String description;
     private String duration;
     private double fee;
-
 }
