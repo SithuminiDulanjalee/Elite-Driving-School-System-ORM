@@ -177,7 +177,7 @@ public class InstructorPageController implements Initializable {
         if(!isValidPhone)txtPhone.setStyle(txtPhone.getStyle()+"-fx-border-color: red;");
 
         if (!(isValidName &&isValidEmail&&isValidPhone)) {
-            new Alert(Alert.AlertType.WARNING, "Fail to save instructor").show();
+            new Alert(Alert.AlertType.WARNING, "Fail to update instructor").show();
             return;
         }
 
@@ -253,7 +253,27 @@ public class InstructorPageController implements Initializable {
         }
     }
 
-    public void txtSearchKeyReleased(KeyEvent keyEvent) {
+    public void txtSearchKeyReleased(KeyEvent keyEvent) throws SQLException, ClassNotFoundException {
+        String searchText = txtSearch.getText().toLowerCase();
+        ObservableList<InstructorTM> allInstructors = FXCollections.observableArrayList();
+        ObservableList<InstructorTM> filteredList = FXCollections.observableArrayList();
+
+        for (InstructorDTO dto : instructorBO.getAllInstructors()) {
+            if (dto.getInstructorId().toLowerCase().contains(searchText) ||
+                    dto.getInstructorName().toLowerCase().contains(searchText) ||
+                    dto.getPhone().toLowerCase().contains(searchText) ||
+                    dto.getEmail().toLowerCase().contains(searchText) ||
+                    dto.getSpecialization().toLowerCase().contains(searchText)) {
+                filteredList.add(new InstructorTM(
+                        dto.getInstructorId(),
+                        dto.getInstructorName(),
+                        dto.getPhone(),
+                        dto.getEmail(),
+                        dto.getSpecialization()
+                ));
+            }
+        }
+        tblInstructor.setItems(filteredList);
     }
 
     public void txtPhoneKeyReleased(KeyEvent keyEvent) {

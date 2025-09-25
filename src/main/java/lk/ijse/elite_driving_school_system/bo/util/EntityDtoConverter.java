@@ -1,6 +1,8 @@
-package lk.ijse.elite_driving_school_system.util;
+package lk.ijse.elite_driving_school_system.bo.util;
 
+import lk.ijse.elite_driving_school_system.dto.CourseDTO;
 import lk.ijse.elite_driving_school_system.dto.InstructorDTO;
+import lk.ijse.elite_driving_school_system.entity.Course;
 import lk.ijse.elite_driving_school_system.entity.Instructor;
 
 public class EntityDtoConverter {
@@ -22,5 +24,25 @@ public class EntityDtoConverter {
         instructor.setEmail(dto.getPhone());
         instructor.setSpecialization(dto.getSpecialization());
         return instructor;
+    }
+
+    public CourseDTO getCourseDTO(Course course) {
+        return new CourseDTO(
+                course.getCourseId(),
+                course.getCourseName(),
+                course.getDescription(),
+                course.getDuration(),
+                course.getFee()
+        );
+    }
+
+    public Course getCourse(CourseDTO dto) {
+        Course course = new Course();
+        course.setCourseId(dto.getCourseId());
+        course.setCourseName(dto.getCourseName());
+        course.setDescription(dto.getDescription());
+        course.setDuration(dto.getDuration());
+        course.setFee(dto.getFee());
+        return course;
     }
 }

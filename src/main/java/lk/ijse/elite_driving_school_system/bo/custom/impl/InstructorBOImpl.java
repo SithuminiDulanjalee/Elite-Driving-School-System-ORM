@@ -7,7 +7,7 @@ import lk.ijse.elite_driving_school_system.dao.DAOFactory;
 import lk.ijse.elite_driving_school_system.dao.custom.InstructorDAO;
 import lk.ijse.elite_driving_school_system.dto.InstructorDTO;
 import lk.ijse.elite_driving_school_system.entity.Instructor;
-import lk.ijse.elite_driving_school_system.util.EntityDtoConverter;
+import lk.ijse.elite_driving_school_system.bo.util.EntityDtoConverter;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

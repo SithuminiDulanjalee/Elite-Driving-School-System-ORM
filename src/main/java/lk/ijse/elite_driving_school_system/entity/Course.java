@@ -37,5 +37,10 @@ public class Course {
     private Instructor instructors;
 
     public Course(String courseId, String courseName, String description, String duration, double fee) {
+        this.courseId = courseId;
+        this.courseName = courseName;
+        this.description = description;
+        this.duration = duration;
+        this.fee = fee;
     }
 }
