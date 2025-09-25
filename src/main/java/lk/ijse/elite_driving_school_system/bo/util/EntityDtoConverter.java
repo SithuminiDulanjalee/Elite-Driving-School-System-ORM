@@ -3,10 +3,8 @@ package lk.ijse.elite_driving_school_system.bo.util;
 import lk.ijse.elite_driving_school_system.dto.CourseDTO;
 import lk.ijse.elite_driving_school_system.dto.InstructorDTO;
 import lk.ijse.elite_driving_school_system.dto.LessonDTO;
-import lk.ijse.elite_driving_school_system.entity.Course;
-import lk.ijse.elite_driving_school_system.entity.Instructor;
-import lk.ijse.elite_driving_school_system.entity.Lesson;
-import lk.ijse.elite_driving_school_system.entity.Student;
+import lk.ijse.elite_driving_school_system.dto.UserDTO;
+import lk.ijse.elite_driving_school_system.entity.*;
 
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -78,6 +76,26 @@ public class EntityDtoConverter {
         lesson.setTime(dto.getTime());
 
         return lesson;
+    }
+
+    public UserDTO getUserDTO(User user) {
+        if (user == null) return null;
+        return new UserDTO(
+                user.getUserId(),
+                user.getUserName(),
+                user.getPassword(),
+                user.getRole()
+        );
+    }
+
+    public User getUser(UserDTO dto) {
+        if (dto == null) return null;
+        return new User(
+                dto.getUserId(),
+                dto.getUserName(),
+                dto.getPassword(),
+                dto.getRole()
+        );
     }
 
 }

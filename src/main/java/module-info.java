@@ -5,6 +5,7 @@ module lk.ijse.elitedrivingschool.elite_driving_school_system {
     requires org.hibernate.orm.core;
     requires jakarta.persistence;
     requires java.naming;
+    requires jbcrypt;
 
 
     opens lk.ijse.elite_driving_school_system to javafx.fxml;
