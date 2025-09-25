@@ -10,5 +10,6 @@ import java.util.Optional;
 
 public interface UserDAO extends CrudDAO<User> {
     Optional<User> findById(String id) throws SQLException;
+    User getUser(String userName)throws Exception;
     Optional<User> findByUsername(String username) throws Exception;
 }

@@ -4,12 +4,20 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
+import lk.ijse.elite_driving_school_system.bo.BOFactory;
+import lk.ijse.elite_driving_school_system.bo.custom.InstructorBO;
+import lk.ijse.elite_driving_school_system.bo.custom.LoginBO;
+import lk.ijse.elite_driving_school_system.bo.exception.InvalidCredentialsException;
+import lk.ijse.elite_driving_school_system.dto.UserDTO;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,23 +30,56 @@ public class LoginController implements Initializable {
     public TextField txtPassword;
     public Label lblInvalid;
     public StackPane dialogPane;
+    private UserDTO userDTO;
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
-        String inputUsername = txtUsername.getText().trim();
-        String inputPassword = txtPassword.getText().trim();
+        LoginBO loginBO = (LoginBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.LOGIN);
+        if (!txtUsername.getText().isEmpty() && !txtPassword.getText().isEmpty()) {
+            try {
+                UserDTO loginUser = loginBO.getUser(txtUsername.getText().trim());
 
-        if ("admin".equals(inputUsername) && "1234".equals(inputPassword)) {
-            navigateTo("/view/Dashboard.fxml");
+                if (checkPassword(txtPassword.getText().trim(), loginUser.getPassword())) {
+                    userDTO = loginUser;
+                    openMainForm(loginUser.getRole());
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Invalid User Password !!").show();
+                }
+            } catch (InvalidCredentialsException e) {
+                new Alert(Alert.AlertType.ERROR, "ERROR").show();
+            }
         } else {
-            lblInvalid.setVisible(true);
-            lblInvalid.setText("Invalid username or password");
+            new Alert(Alert.AlertType.WARNING, "Please Enter All Fields !!").show();
         }
 
-        if (inputUsername.isEmpty() || inputPassword.isEmpty()) {
-            lblInvalid.setVisible(true);
-            lblInvalid.setText("Please enter username and password");
-        }
+    }
 
+    private void openMainForm(String role) {
+        try {
+            String fxmlFile;
+
+            if ("Admin".equalsIgnoreCase(role)) {
+                fxmlFile = "/view/Dashboard.fxml";
+            } else if ("Receptionist".equalsIgnoreCase(role)) {
+                fxmlFile = "/view/Dashboard.fxml";
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Unknown role: " + role).show();
+                return;
+            }
+
+            Scene scene = new Scene(FXMLLoader.load(this.getClass().getResource(fxmlFile)));
+            Stage stage = (Stage) ancMainContainer.getScene().getWindow();
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.setResizable(false);
+            stage.show();
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private boolean checkPassword(String inputPassword, String hashedPassword) {
+        return BCrypt.checkpw(inputPassword, hashedPassword);
     }
 
     private void navigateTo(String path) {

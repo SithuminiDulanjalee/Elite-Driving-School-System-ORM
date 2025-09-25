@@ -1,6 +1,7 @@
 package lk.ijse.elite_driving_school_system.bo.custom.impl;
 
 import lk.ijse.elite_driving_school_system.bo.custom.LessonBO;
+import lk.ijse.elite_driving_school_system.bo.exception.UserAlreadyExistsException;
 import lk.ijse.elite_driving_school_system.bo.util.EntityDtoConverter;
 import lk.ijse.elite_driving_school_system.dao.DAOFactory;
 import lk.ijse.elite_driving_school_system.dao.custom.LessonDAO;
@@ -16,7 +17,7 @@ public class LessonBOImpl implements LessonBO {
     private final EntityDtoConverter entityDtoConverter = new EntityDtoConverter();
 
     @Override
-    public boolean saveLesson(LessonDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean saveLesson(LessonDTO dto) throws SQLException, ClassNotFoundException, UserAlreadyExistsException {
         Lesson lesson = entityDtoConverter.getLesson(dto);
         lessonDAO.save(lesson);
         return false;

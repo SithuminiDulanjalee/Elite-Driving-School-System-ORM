@@ -36,6 +36,7 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public boolean saveUsers(UserDTO userDTO) throws SQLException, ClassNotFoundException {
+        System.out.println(userDTO.getUserId());
         try {
             Optional<User> optionalUser = userDAO.findById(userDTO.getUserId());
             if (optionalUser.isPresent()) {

@@ -1,5 +1,6 @@
 package lk.ijse.elite_driving_school_system.dao.custom.impl;
 
+import lk.ijse.elite_driving_school_system.bo.exception.UserAlreadyExistsException;
 import lk.ijse.elite_driving_school_system.config.FactoryConfiguration;
 import lk.ijse.elite_driving_school_system.dao.custom.UserDAO;
 import lk.ijse.elite_driving_school_system.entity.User;
@@ -39,24 +40,20 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public boolean save(User user) throws SQLException {
-        Transaction transaction = null;
-        try (Session session = FactoryConfiguration.getInstance().getSession()) {
-            transaction = session.beginTransaction();
+    public boolean save(User user) throws SQLException, UserAlreadyExistsException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
 
-            // Hash password before saving
-            String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
-            user.setPassword(hashedPassword);
-
+        try {
             session.persist(user);
-            transaction.commit();
-            return true;
-        } catch (Exception e) {
-            if (transaction != null && transaction.getStatus().canRollback()) {
-                transaction.rollback();
-            }
-            throw new SQLException("Failed to save user", e);
+        } catch (Exception e){
+            throw new UserAlreadyExistsException(e.getMessage());
         }
+
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
@@ -122,6 +119,23 @@ public class UserDAOImpl implements UserDAO {
         } catch (Exception e) {
             throw new SQLException("Failed to find user by ID", e);
         }
+    }
+
+    @Override
+    public User getUser(String userName) throws Exception {
+        User user = null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "FROM User u WHERE u.userName = :userName";
+        user = session.createQuery(hql, User.class)
+                .setParameter("userName", userName)
+                .uniqueResult();
+
+        transaction.commit();
+        session.close();
+
+        return user;
     }
 
     public Optional<User> findByUsername(String username) throws SQLException {
