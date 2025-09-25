@@ -9,8 +9,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "student")
@@ -31,6 +33,9 @@ public class Student {
     private String address;
     @Column(nullable = false)
     private Date registerDate;
+    private String course;
+    @Column(nullable = false)
+    private double payment;
 
     @ManyToMany
     @JoinTable(
@@ -47,5 +52,16 @@ public class Student {
 
     public Student(String studentId) {
         this.studentId = studentId;
+    }
+
+    public Student(String studentId, String studentName, String phone, String email, String address, Date registerDate, String course, double payment) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        this.registerDate = registerDate;
+        this.course = course;
+        this.payment = payment;
     }
 }

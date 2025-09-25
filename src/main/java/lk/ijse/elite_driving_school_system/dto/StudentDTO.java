@@ -19,8 +19,8 @@ public class StudentDTO {
     private String phone;
     private String email;
     private String address;
-    private String registerDate;
-    private List<String> courseIds;
+    private Date registerDate;
+    private String course;
     private double payment;
 
 }

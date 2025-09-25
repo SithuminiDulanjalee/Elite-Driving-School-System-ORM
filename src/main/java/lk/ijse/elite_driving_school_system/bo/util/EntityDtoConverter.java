@@ -1,15 +1,18 @@
 package lk.ijse.elite_driving_school_system.bo.util;
 
-import lk.ijse.elite_driving_school_system.dto.CourseDTO;
-import lk.ijse.elite_driving_school_system.dto.InstructorDTO;
-import lk.ijse.elite_driving_school_system.dto.LessonDTO;
-import lk.ijse.elite_driving_school_system.dto.UserDTO;
+import lk.ijse.elite_driving_school_system.dao.DAOFactory;
+import lk.ijse.elite_driving_school_system.dao.custom.CourseDAO;
+import lk.ijse.elite_driving_school_system.dao.custom.PaymentDAO;
+import lk.ijse.elite_driving_school_system.dto.*;
 import lk.ijse.elite_driving_school_system.entity.*;
 
+import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class EntityDtoConverter {
     public InstructorDTO getInstructorDTO(Instructor instructor) {
@@ -95,6 +98,32 @@ public class EntityDtoConverter {
                 dto.getUserName(),
                 dto.getPassword(),
                 dto.getRole()
+        );
+    }
+
+    public Student getStudent(StudentDTO dto) {
+        return new Student(
+                dto.getStudentId(),
+                dto.getStudentName(),
+                dto.getPhone(),
+                dto.getEmail(),
+                dto.getAddress(),
+                dto.getRegisterDate(),
+                dto.getCourse(),
+                dto.getPayment()
+        );
+    }
+
+    public StudentDTO getStudentDTO(Student entity) {
+        return new StudentDTO(
+                entity.getStudentId(),
+                entity.getStudentName(),
+                entity.getPhone(),
+                entity.getEmail(),
+                entity.getAddress(),
+                entity.getRegisterDate(),
+                entity.getCourse(),
+                entity.getPayment()
         );
     }
 
