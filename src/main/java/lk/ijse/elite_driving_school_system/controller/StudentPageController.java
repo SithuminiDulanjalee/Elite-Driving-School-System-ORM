@@ -30,6 +30,10 @@ public class StudentPageController implements Initializable {
     public TableColumn colCourse;
     public DatePicker registrationDatePicker;
     public ComboBox cmbCourse;
+    public TableColumn colPayment;
+    public TextField txtSearch;
+    public ListView listCourseId;
+    public TextField txtPayment;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

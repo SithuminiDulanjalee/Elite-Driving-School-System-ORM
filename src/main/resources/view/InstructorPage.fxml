@@ -113,7 +113,7 @@
         </children>
     </HBox>
 
-    <TableView fx:id="tblInstructor" layoutX="57.0" layoutY="470.0" onMouseClicked="#tblInstructorOnClickAction" prefHeight="180.0" prefWidth="656.0">
+    <TableView fx:id="tblInstructor" layoutX="57.0" layoutY="470.0" onMouseClicked="#tblInstructorOnClickAction" prefHeight="180.0" prefWidth="656.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="470.0">
         <columns>
             <TableColumn fx:id="colId" prefWidth="100.0" text="ID" />
             <TableColumn fx:id="colName" prefWidth="140.0" text="Name" />

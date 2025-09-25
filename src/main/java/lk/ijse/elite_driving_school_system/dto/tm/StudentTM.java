@@ -1,19 +1,17 @@
-package lk.ijse.elite_driving_school_system.dto;
+package lk.ijse.elite_driving_school_system.dto.tm;
 
-import lk.ijse.elite_driving_school_system.entity.Payment;
-import lombok.*;
-import org.hibernate.annotations.JoinColumnOrFormula;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @ToString
-public class StudentDTO {
+public class StudentTM {
     private String studentId;
     private String studentName;
     private String phone;

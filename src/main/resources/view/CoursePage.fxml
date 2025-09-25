@@ -114,7 +114,7 @@
     </HBox>
 
     <!-- Table -->
-    <TableView fx:id="tblCourses" layoutX="57.0" layoutY="460.0" onMouseClicked="#tblCourseOnClickAction" prefHeight="180.0" prefWidth="656.0">
+    <TableView fx:id="tblCourses" layoutX="57.0" layoutY="460.0" onMouseClicked="#tblCourseOnClickAction" prefHeight="180.0" prefWidth="656.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="57.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="460.0">
         <columns>
             <TableColumn fx:id="colId" prefWidth="100.0" text="ID" />
             <TableColumn fx:id="colName" prefWidth="140.0" text="Name" />
