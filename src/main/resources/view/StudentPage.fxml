@@ -132,7 +132,7 @@
         </columnResizePolicy>
     </TableView>
     <TextField fx:id="txtSearch" layoutX="463.0" layoutY="45.0" onKeyReleased="#txtSearchKeyReleased" prefWidth="200.0" promptText="Enter name or ID" stylesheets="@../css/main.css" />
-   <VBox layoutX="456.0" layoutY="166.0" spacing="15.0">
+   <VBox layoutX="394.0" layoutY="163.0" spacing="15.0">
       <children>
          <HBox spacing="10.0">
             <children>

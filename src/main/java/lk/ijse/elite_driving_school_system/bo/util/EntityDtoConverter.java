@@ -6,6 +6,7 @@ import lk.ijse.elite_driving_school_system.dao.custom.PaymentDAO;
 import lk.ijse.elite_driving_school_system.dto.*;
 import lk.ijse.elite_driving_school_system.entity.*;
 
+import java.sql.Date;
 import java.sql.SQLException;
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -124,6 +125,29 @@ public class EntityDtoConverter {
                 entity.getRegisterDate(),
                 entity.getCourse(),
                 entity.getPayment()
+        );
+    }
+
+    public Payment getPayment(PaymentDTO dto) {
+        Payment payment = new Payment();
+        payment.setPaymentId(dto.getPaymentId());
+        payment.setStudents(new Student(dto.getStudentId()));
+        payment.setCourse(new Course(dto.getCourseId()));
+        payment.setPaymentDate(Date.valueOf(String.valueOf(dto.getPaymentDate())));
+        payment.setAmount(dto.getAmount());
+        payment.setStatus(dto.getStatus());
+
+        return payment;
+    }
+
+    public PaymentDTO getPaymentDTO(Payment entity) {
+        return new PaymentDTO(
+                entity.getPaymentId(),
+                entity.getStudents().getStudentId(),
+                entity.getCourse().getCourseId(),
+                entity.getPaymentDate(),
+                entity.getAmount(),
+                entity.getStatus()
         );
     }
 

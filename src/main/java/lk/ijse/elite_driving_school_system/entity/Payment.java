@@ -26,4 +26,9 @@ public class Payment {
     private double amount;
     @Column(nullable = false)
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "course_id")
+    private Course course;
+
 }

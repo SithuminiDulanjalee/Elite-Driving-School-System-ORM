@@ -37,7 +37,7 @@
                                                 <Font name="SansSerif Bold" size="14.0" />
                                             </font>
                                         </Label>
-                                        <TextField fx:id="txtUsername" onAction="#txtUserNameOnAction" prefHeight="27.0" prefWidth="252.0" promptText="Username" style="-fx-border-color: #1f2e90; -fx-border-radius: 10; -fx-background-radius: 10;" text="admin" />
+                                        <TextField fx:id="txtUsername" onAction="#txtUserNameOnAction" prefHeight="27.0" prefWidth="252.0" promptText="Username" style="-fx-border-color: #1f2e90; -fx-border-radius: 10; -fx-background-radius: 10;" />
                                     </children>
                                 </VBox>
                                 <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
@@ -47,13 +47,13 @@
                                                 <Font name="SansSerif Bold" size="14.0" />
                                             </font>
                                         </Label>
-                                        <PasswordField fx:id="txtPassword" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #1f2e90; -fx-background-radius: 10; -fx-border-radius: 10;" text="1234" />
+                                        <PasswordField fx:id="txtPassword" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #1f2e90; -fx-background-radius: 10; -fx-border-radius: 10;" />
                               <Label layoutX="10.0" layoutY="10.0" text="Confirm Password" textFill="#480f2e">
                                  <font>
                                     <Font name="SansSerif Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <PasswordField fx:id="txtConfirmPassword" layoutX="10.0" layoutY="31.0" onAction="#confirmPasswordOnAction" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #1f2e90; -fx-background-radius: 10; -fx-border-radius: 10;" text="1234" />
+                              <PasswordField fx:id="txtConfirmPassword" layoutX="10.0" layoutY="31.0" onAction="#confirmPasswordOnAction" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #1f2e90; -fx-background-radius: 10; -fx-border-radius: 10;" />
                                     </children>
                                 </VBox>
                         <RadioButton fx:id="adminRadioBtn" mnemonicParsing="false" onAction="#adminRadioBtnOnAction" text="Admin">

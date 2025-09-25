@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="765.0" prefWidth="892.0" style="-fx-background-color: #bdd7ff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.elite_driving_school_system.controller.DashboardController">
+<AnchorPane prefHeight="707.0" prefWidth="827.0" style="-fx-background-color: #bdd7ff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.elite_driving_school_system.controller.DashboardController">
     <children>
         <AnchorPane fx:id="ancMainContainer" layoutX="212.0" layoutY="26.0" prefHeight="723.0" prefWidth="678.0" style="-fx-background-color: #1f2e90;" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="26.0" />
         <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1f2e90;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -28,18 +28,6 @@
                                 <ImageView fitHeight="18.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../images/icons/Home.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#btnStudentPageOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fcf3f9;" text="Students">
-                            <font>
-                                <Font name="SansSerif Bold" size="14.0" />
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="24.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../images/icons/Student.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -68,14 +56,14 @@
                                 </ImageView>
                             </graphic>
                         </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnPaymentPageOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fcf3f9;" text="Payments">
+                        <JFXButton alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#btnStudentPageOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fcf3f9;" text="Students">
                             <font>
                                 <Font name="SansSerif Bold" size="14.0" />
                             </font>
                             <graphic>
-                                <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="24.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../images/icons/Payment.png" />
+                                        <Image url="@../images/icons/Student.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
@@ -100,6 +88,18 @@
                                 <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../images/icons/User.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="187.0" mnemonicParsing="false" onAction="#btnPaymentPageOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fcf3f9;" text="Payments">
+                            <font>
+                                <Font name="SansSerif Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="25.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/icons/Payment.png" />
                                     </image>
                                 </ImageView>
                             </graphic>

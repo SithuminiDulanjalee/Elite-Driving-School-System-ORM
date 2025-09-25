@@ -36,7 +36,7 @@
                                     <Font name="SansSerif Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="txtUsername" prefHeight="27.0" prefWidth="252.0" promptText="Username" style="-fx-border-color: #1f2e90; -fx-border-radius: 10; -fx-background-radius: 10;" text="admin" />
+                              <TextField fx:id="txtUsername" prefHeight="27.0" prefWidth="252.0" promptText="Username" style="-fx-border-color: #1f2e90; -fx-border-radius: 10; -fx-background-radius: 10;" />
                            </children>
                         </VBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0">
@@ -46,7 +46,7 @@
                                     <Font name="SansSerif Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <PasswordField fx:id="txtPassword" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #1f2e90; -fx-background-radius: 10; -fx-border-radius: 10;" text="1234" />
+                              <PasswordField fx:id="txtPassword" prefHeight="27.0" prefWidth="252.0" promptText="Password" style="-fx-border-color: #1f2e90; -fx-background-radius: 10; -fx-border-radius: 10;" />
                            </children>
                         </VBox>
                         <Label fx:id="lblInvalid" contentDisplay="CENTER" prefHeight="14.0" prefWidth="378.0" text="Error" textFill="RED" visible="false">

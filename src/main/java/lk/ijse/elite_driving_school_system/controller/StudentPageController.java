@@ -78,7 +78,7 @@ public class StudentPageController implements Initializable {
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colAddress.setCellValueFactory(new PropertyValueFactory<>("address"));
         colRegistrationDate.setCellValueFactory(new PropertyValueFactory<>("registerDate"));
-        colCourse.setCellValueFactory(new PropertyValueFactory<>("courseIds"));
+        colCourse.setCellValueFactory(new PropertyValueFactory<>("course"));
         colPayment.setCellValueFactory(new PropertyValueFactory<>("payment"));
     }
 
@@ -118,8 +118,9 @@ public class StudentPageController implements Initializable {
     public void btnSearchOnAction(ActionEvent actionEvent) {
     }
 
-    public void btnResetOnAction(ActionEvent actionEvent) {
+    public void btnResetOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
         resetPage();
+        generateStudentId();
     }
 
     public void tblStudentOnClickAction(MouseEvent mouseEvent) {
