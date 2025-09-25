@@ -1,8 +1,7 @@
-package lk.ijse.elite_driving_school_system.dto;
+package lk.ijse.elite_driving_school_system.dto.tm;
 
 import lombok.*;
 
-import java.sql.Time;
 import java.sql.Date;
 import java.time.LocalDate;
 
@@ -10,7 +9,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Data
 @ToString
-public class LessonDTO {
+public class LessonTM {
     private String lessonId;
     private String studentId;
     private String instructorId;

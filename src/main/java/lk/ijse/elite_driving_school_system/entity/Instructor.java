@@ -37,4 +37,8 @@ public class Instructor {
 
     @OneToMany(mappedBy = "instructors", cascade = CascadeType.ALL)
     private List<Lesson> lessons = new ArrayList<>();
+
+    public Instructor(String instructorId) {
+        this.instructorId = instructorId;
+    }
 }

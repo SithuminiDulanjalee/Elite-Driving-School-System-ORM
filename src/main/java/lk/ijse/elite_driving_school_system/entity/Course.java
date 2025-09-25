@@ -43,4 +43,8 @@ public class Course {
         this.duration = duration;
         this.fee = fee;
     }
+
+    public Course(String courseId) {
+        this.courseId = courseId;
+    }
 }

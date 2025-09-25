@@ -45,4 +45,7 @@ public class Student {
     @OneToMany(mappedBy = "students", cascade = CascadeType.ALL)
     private List<Payment> payments = new ArrayList<>();
 
+    public Student(String studentId) {
+        this.studentId = studentId;
+    }
 }

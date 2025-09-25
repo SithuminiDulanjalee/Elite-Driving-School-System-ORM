@@ -48,11 +48,11 @@ public class CoursePageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {
+            txtId.setText(courseBO.getNextId());
+            txtId.setEditable(false);
             setCellValueFactory();
             loadTableData();
 
-            txtId.setText(courseBO.getNextId());
-            txtId.setEditable(false);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
