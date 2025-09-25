@@ -18,10 +18,17 @@ public class LessonBOImpl implements LessonBO {
 
     @Override
     public boolean saveLesson(LessonDTO dto) throws SQLException, ClassNotFoundException, UserAlreadyExistsException {
+        // Generate a new unique ID
+        if (dto.getLessonId() == null || dto.getLessonId().isEmpty()) {
+            dto.setLessonId(generateNextLessonId());
+        }
+
         Lesson lesson = entityDtoConverter.getLesson(dto);
-        lessonDAO.save(lesson);
-        return false;
+
+        // Save and return result
+        return lessonDAO.save(lesson);
     }
+
 
     @Override
     public void updateLesson(LessonDTO dto) throws SQLException, ClassNotFoundException {
