@@ -133,9 +133,21 @@ public class LessonPageController implements Initializable {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) throws SQLException, ClassNotFoundException {
-        lessonBO.saveLesson(getObject());
-        clearData();
-        loadAllLesson();
+        LessonDTO lessonDTO = getObject();
+
+        try {
+            boolean isSaved = lessonBO.saveLesson(lessonDTO);
+
+            if (isSaved) {
+                clearData();
+                new Alert(Alert.AlertType.INFORMATION, "Lesson saved successfully").show();
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Fail to save lesson").show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
     public void btnSearchOnAction(ActionEvent actionEvent) {
@@ -187,7 +199,7 @@ public class LessonPageController implements Initializable {
                 cmbCourse.getValue(),
                 dateDatePicker.getValue(),
                 txtName.getText(),
-                Time.valueOf(txtTime.getText()).toString()
+                txtTime.getText()
         );
     }
 

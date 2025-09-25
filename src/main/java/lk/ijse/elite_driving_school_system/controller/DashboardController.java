@@ -81,4 +81,8 @@ public class DashboardController implements Initializable {
         stage.setTitle("Elite Driving School");
         stage.show();
     }
+
+    public void btnUserPageOnAction(ActionEvent actionEvent) {
+        navigateTo("/view/UserPage.fxml");
+    }
 }

@@ -3,20 +3,11 @@ package lk.ijse.elite_driving_school_system.bo.custom.impl;
 import lk.ijse.elite_driving_school_system.bo.custom.LessonBO;
 import lk.ijse.elite_driving_school_system.bo.util.EntityDtoConverter;
 import lk.ijse.elite_driving_school_system.dao.DAOFactory;
-import lk.ijse.elite_driving_school_system.dao.custom.CourseDAO;
-import lk.ijse.elite_driving_school_system.dao.custom.InstructorDAO;
 import lk.ijse.elite_driving_school_system.dao.custom.LessonDAO;
-import lk.ijse.elite_driving_school_system.dao.custom.StudentDAO;
 import lk.ijse.elite_driving_school_system.dto.LessonDTO;
-import lk.ijse.elite_driving_school_system.entity.Course;
-import lk.ijse.elite_driving_school_system.entity.Instructor;
 import lk.ijse.elite_driving_school_system.entity.Lesson;
-import lk.ijse.elite_driving_school_system.entity.Student;
 
 import java.sql.SQLException;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +16,10 @@ public class LessonBOImpl implements LessonBO {
     private final EntityDtoConverter entityDtoConverter = new EntityDtoConverter();
 
     @Override
-    public void saveLesson(LessonDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean saveLesson(LessonDTO dto) throws SQLException, ClassNotFoundException {
         Lesson lesson = entityDtoConverter.getLesson(dto);
         lessonDAO.save(lesson);
+        return false;
     }
 
     @Override

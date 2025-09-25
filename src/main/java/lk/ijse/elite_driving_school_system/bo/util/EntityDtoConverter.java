@@ -75,7 +75,7 @@ public class EntityDtoConverter {
 
         lesson.setDate(dto.getDate());
         lesson.setLessonName(dto.getLessonName());
-        lesson.setTime(String.valueOf(Time.valueOf(dto.getTime())));
+        lesson.setTime(dto.getTime());
 
         return lesson;
     }

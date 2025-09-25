@@ -229,7 +229,7 @@ public class CoursePageController implements Initializable {
             btnSave.setDisable(false);
             btnDelete.setDisable(true);
             btnUpdate.setDisable(true);
-            txtId.clear();
+//            txtId.clear();
             txtName.clear();
             txtDescription.clear();
             txtDuration.clear();

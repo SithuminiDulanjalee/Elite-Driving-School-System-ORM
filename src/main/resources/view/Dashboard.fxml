@@ -92,6 +92,18 @@
                                 </ImageView>
                             </graphic>
                         </JFXButton>
+                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="523.0" mnemonicParsing="false" onAction="#btnUserPageOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fcf3f9;" text="Users">
+                            <font>
+                                <Font name="SansSerif Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/icons/User.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </JFXButton>
                         <JFXButton alignment="BASELINE_LEFT" layoutX="20.0" layoutY="460.0" mnemonicParsing="false" onAction="#btnSettingsOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fcf3f9;" text="Settings">
                             <font>
                                 <Font name="SansSerif Bold" size="14.0" />
@@ -100,18 +112,6 @@
                                 <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../images/icons/Settings.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </JFXButton>
-                        <JFXButton alignment="BASELINE_LEFT" layoutX="10.0" layoutY="523.0" mnemonicParsing="false" onAction="#btnReportPageOnAction" prefHeight="30.0" prefWidth="200.0" style="-fx-background-color: #fcf3f9;" text="Report">
-                            <font>
-                                <Font name="SansSerif Bold" size="14.0" />
-                            </font>
-                            <graphic>
-                                <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@../images/icons/Report.png" />
                                     </image>
                                 </ImageView>
                             </graphic>
